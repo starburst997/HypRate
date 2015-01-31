@@ -55,7 +55,7 @@ namespace hyprate{
 	* @return	void
 	*/
 	void setAppId( const char *s ){
-		[Appirater setAppId:[[[NSString alloc] initWithUTF8String:s] autorelease]];
+		[Appirater setAppId:[[NSString alloc] initWithUTF8String:s]];
 		[Appirater appLaunched:NO];
 	}
 
@@ -66,7 +66,7 @@ namespace hyprate{
 	* @return	void
 	*/
 	void setDialog_title( const char *s ){
-		[Appirater setCustomAlertTitle:[[[NSString alloc] initWithUTF8String:s] autorelease]];
+		[Appirater setCustomAlertTitle:[[NSString alloc] initWithUTF8String:s]];
 	}
 	
 	/**
@@ -86,7 +86,7 @@ namespace hyprate{
 	* @return	void
 	*/
 	void setDialog_msg( const char *s ){
-		[Appirater setCustomAlertMessage:[[[NSString alloc] initWithUTF8String:s] autorelease]];
+		[Appirater setCustomAlertMessage:[[NSString alloc] initWithUTF8String:s]];
 	}
 
 	/**
@@ -96,7 +96,7 @@ namespace hyprate{
 	* @return	void
 	*/
 	void setPositive_text( const char *s ){
-		[Appirater setCustomAlertRateButtonTitle:[[[NSString alloc] initWithUTF8String:s] autorelease]];
+		[Appirater setCustomAlertRateButtonTitle:[[NSString alloc] initWithUTF8String:s]];
 	}
 
 	/**
@@ -106,7 +106,7 @@ namespace hyprate{
 	* @return	void
 	*/
 	void setNeutral_text( const char *s ){
-		[Appirater setCustomAlertRateLaterButtonTitle:[[[NSString alloc] initWithUTF8String:s] autorelease]];
+		[Appirater setCustomAlertRateLaterButtonTitle:[[NSString alloc] initWithUTF8String:s]];
 	}
 
 	/**
@@ -116,7 +116,7 @@ namespace hyprate{
 	* @return	void
 	*/
 	void setCancel_text( const char *s ){
-		[Appirater setCustomAlertCancelButtonTitle:[[[NSString alloc] initWithUTF8String:s] autorelease]];
+		[Appirater setCustomAlertCancelButtonTitle:[[NSString alloc] initWithUTF8String:s]];
 	}
     
 	/**
