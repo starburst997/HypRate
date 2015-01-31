@@ -130,7 +130,7 @@ namespace hyprate{
 		[Appirater setSignificantEventsUntilPrompt:-1];
 		[Appirater setTimeBeforeReminding:unitD];
 		[Appirater setDebug:YES];
-		[Appirater incrementSignificantEventAndRate:YES];
+		[Appirater userDidSignificantEvent:YES];
 	}
 
 	/**
@@ -140,7 +140,7 @@ namespace hyprate{
 	* @return	void
 	*/
 	void show( ){
-        [Appirater showPrompt];
+        [Appirater forceShowPrompt:YES];
 	}
 
 
