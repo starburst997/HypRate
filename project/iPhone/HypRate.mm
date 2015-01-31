@@ -35,7 +35,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 	@implementation HypRate
 	
-		-(BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
+		-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
 			return YES;
 		}
 		
@@ -56,7 +56,6 @@ namespace hyprate{
 	*/
 	void setAppId( const char *s ){
 		[Appirater setAppId:[[NSString alloc] initWithUTF8String:s]];
-		[Appirater appLaunched:NO];
 	}
 
 	/**
@@ -76,7 +75,7 @@ namespace hyprate{
 	* @return	void
 	*/
 	void setStore( const char *s ){
-		// Do nothing for iOS
+		NSLog(@"Not implemented in iOS");
 	}
 
 	/**
@@ -132,6 +131,7 @@ namespace hyprate{
 		[Appirater setSignificantEventsUntilPrompt:-1];
 		[Appirater setTimeBeforeReminding:unitD];
 		[Appirater setDebug:YES];
+		
 		[Appirater userDidSignificantEvent:YES];
 	}
 
