@@ -19,10 +19,11 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 //interface
 
 	@interface HypRate : NSObject
-		+ (HypRate *)instance;
+		
 	@end
 
 	@interface NMEAppDelegate : NSObject <UIApplicationDelegate>
+		
 	@end
 
 
