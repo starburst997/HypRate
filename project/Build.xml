@@ -20,6 +20,7 @@
   <files id="iphone">
       <compilerflag value="-IiPhone/include"/>
       <compilerflag value="-Iinclude"/>
+	  <compilerflag value="-fobjc-arc"/>
       <file name="iPhone/HypRate.mm"/>
 	  <file name="iPhone/include/Appirater.m"/>
   </files>
