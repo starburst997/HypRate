@@ -16,4 +16,6 @@
 	<!-- Android -->
 		<java path="project/android" />
 		<templatePath name="templates" />
+		
+		<haxedef name="FAILSAFE_FRAGMENT"/>
 </project>
