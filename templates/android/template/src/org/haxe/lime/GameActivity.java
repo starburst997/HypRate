@@ -45,7 +45,7 @@ import android.support.v4.app.FragmentActivity;
 
 import android.util.Log;
 
-public class FragmentGameActivity extends FragmentActivity implements SensorEventListener {
+public class GameActivity extends FragmentActivity implements SensorEventListener {
 	
 	
 	private static final int DEVICE_ORIENTATION_UNKNOWN = 0;
@@ -62,7 +62,7 @@ public class FragmentGameActivity extends FragmentActivity implements SensorEven
 	private static final String GLOBAL_PREF_FILE = "nmeAppPrefs";
 	
 	private static float[] accelData = new float[3];
-	private static FragmentGameActivity activity;
+	private static GameActivity activity;
 	private static AssetManager mAssets;
 	private static int bufferedDisplayOrientation = -1;
 	private static int bufferedNormalOrientation = -1;
@@ -267,7 +267,7 @@ public class FragmentGameActivity extends FragmentActivity implements SensorEven
 	}
 	
 	
-	public static FragmentGameActivity getInstance () {
+	public static GameActivity getInstance () {
 		
 		return activity;
 		
@@ -294,7 +294,7 @@ public class FragmentGameActivity extends FragmentActivity implements SensorEven
 			
 		} catch (IOException e) {
 			
-			Log.e ("FragmentGameActivity",  "getResource" + ":" + e.toString ());
+			Log.e ("GameActivity",  "getResource" + ":" + e.toString ());
 			
 		}
 		
@@ -316,7 +316,7 @@ public class FragmentGameActivity extends FragmentActivity implements SensorEven
 	
 	static public String getSpecialDir (int inWhich) {
 		
-		//Log.v ("FragmentGameActivity", "Get special Dir " + inWhich);
+		//Log.v ("GameActivity", "Get special Dir " + inWhich);
 		File path = null;
 		
 		switch (inWhich) {
@@ -365,7 +365,7 @@ public class FragmentGameActivity extends FragmentActivity implements SensorEven
 			
 		} catch (Exception e) {
 			
-			Log.e ("FragmentGameActivity", e.toString ());
+			Log.e ("GameActivity", e.toString ());
 			return;
 			
 		}
@@ -387,7 +387,7 @@ public class FragmentGameActivity extends FragmentActivity implements SensorEven
 		if (type == Sensor.TYPE_MAGNETIC_FIELD) {
 			
 			magnetData = event.values.clone ();
-			//Log.d("FragmentGameActivity","new mag: " + magnetData[0] + ", " + magnetData[1] + ", " + magnetData[2]);
+			//Log.d("GameActivity","new mag: " + magnetData[0] + ", " + magnetData[1] + ", " + magnetData[2]);
 			
 		}
 		
@@ -724,7 +724,7 @@ public class FragmentGameActivity extends FragmentActivity implements SensorEven
 	
 	public void queueRunnable (Runnable runnable) {
 		
-		Log.e ("FragmentGameActivity", "queueing...");
+		Log.e ("GameActivity", "queueing...");
 		
 	}
 	
