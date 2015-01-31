@@ -52,6 +52,12 @@ extern "C"{
 		return alloc_null( );
 	}
 	DEFINE_PRIM( HypRate_setDialog_msg , 1 );
+	
+	value HypRate_setStore( value s ) {
+        Hyperfiction::setStore( val_string( s ) );
+		return alloc_null( );
+	}
+	DEFINE_PRIM( HypRate_setStore , 1 );
 
 	value HypRate_setPositive_text( value s ) {
         Hyperfiction::setPositive_text( val_string( s ) );

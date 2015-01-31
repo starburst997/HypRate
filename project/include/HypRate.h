@@ -16,6 +16,7 @@ namespace Hyperfiction{
 	void setAppId( const char *s );
 	void setDialog_title( const char *s );
 	void setDialog_msg( const char *s );
+	void setStore( const char *s );
 	void setPositive_text( const char *s );
 	void setNeutral_text( const char *s );
 	void setCancel_text( const char *s );

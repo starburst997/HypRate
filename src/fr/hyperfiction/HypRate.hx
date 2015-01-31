@@ -88,6 +88,22 @@ class HypRate{
 		static public function setDialog_message( s : String ) : Void {
 
 		}
+		
+		/**
+		*
+		*
+		* @public
+		* @return	void
+		*/
+		#if android
+		@JNI
+		#end
+        #if ios
+        @CPP("HypRate", "HypRate_setStore")
+        #end
+		static public function setStore( s : String ) : Void {
+
+		}
 
 		/**
 		*

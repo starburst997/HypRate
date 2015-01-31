@@ -69,6 +69,17 @@ public class HypRate{
 		static public void setAppId( String appId ){
 			trace("setAppId does nothing on Android");
 		}
+		
+		/**
+		*
+		* play / amazon / androidpit
+		*
+		* @public
+		* @return	void
+		*/
+		static public void setStore( String store ){
+			rmm.setStore( store );
+		}
 
 		/**
 		*

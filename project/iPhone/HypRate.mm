@@ -33,6 +33,16 @@ namespace Hyperfiction{
 	void setDialog_title( const char *s ){
 		[Appirater setTitle_text:[[[NSString alloc] initWithUTF8String:s] autorelease]];
 	}
+	
+	/**
+	*
+	*
+	* @public
+	* @return	void
+	*/
+	void setStore( const char *s ){
+		// Do nothing for iOS
+	}
 
 	/**
 	*
