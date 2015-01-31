@@ -4,6 +4,8 @@
 	<!-- misc -->
 		<classpath name="src" />
 
+		<haxelib name="inthebox-macros" />
+		
 	<!-- iOS -->
         <ndll name="HypRate" if="ios" />
         <dependency name="StoreKit.framework" if="ios" />

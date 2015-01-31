@@ -8,11 +8,11 @@ package fr.hyperfiction;
 import android.util.Log;
 import com.kopfgeldjaeger.ratememaybe.RateMeMaybe;
 import com.kopfgeldjaeger.ratememaybe.RateMeMaybe.OnRMMUserChoiceListener;
-import org.haxe.nme.GameActivity;
+import org.haxe.lime.FragmentGameActivity;
 
 public class HypRate{
 
-	private static RateMeMaybe rmm = new RateMeMaybe( GameActivity.getInstance( ) );
+	private static RateMeMaybe rmm = new RateMeMaybe( FragmentGameActivity.getInstance( ) );
 	private static final String TAG = "trace";
 
 	// -------o constructor
@@ -42,7 +42,7 @@ public class HypRate{
 								int minDays_until_next
 							){
 			trace("start");
-			RateMeMaybe.resetData( GameActivity.getInstance( ) );
+			RateMeMaybe.resetData( FragmentGameActivity.getInstance( ) );
 			rmm.setPromptMinimums( minLaunches , minInitial_days , minLaunches_until_next , minDays_until_next );
 			rmm.setRunWithoutPlayStore(true);
 			rmm.run();
