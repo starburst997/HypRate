@@ -13,6 +13,9 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #include <HypRate.h>
 #include "include/Appirater.h"
 
+//Externs
+	typedef void( *FunctionType)( );
+	
 //interface
 
 	@interface HypRate : NSObject
@@ -31,13 +34,11 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 	@implementation HypRate
 	
-		- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-		{
+		- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
 			
 		}
 		
-		- (void)applicationWillEnterForeground:(UIApplication *)application
-		{
+		- (void)applicationWillEnterForeground:(UIApplication *)application{
 			[Appirater appEnteredForeground:NO];
 		}
 	
