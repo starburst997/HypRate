@@ -87,8 +87,6 @@ public class FragmentGameActivity extends FragmentActivity implements SensorEven
 		
 		super.onCreate (state);
 		
-		Log.v("TEST", "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! CREATE");
-		
 		activity = this;
 		mContext = this;
 		mHandler = new Handler ();
@@ -427,8 +425,6 @@ public class FragmentGameActivity extends FragmentActivity implements SensorEven
 			extension.onDestroy ();
 			
 		}
-		
-		Log.v("TEST", "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! DESTROY");
 		
 		// TODO: Wait for result?
 		mView.sendActivity (Lime.DESTROY);
