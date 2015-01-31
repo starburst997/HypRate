@@ -21,7 +21,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 extern "C"{
 
 	int HypRate_register_prims(){
-		printf("HypFacebook : register_prims()\n");
+		printf("HypRate : register_prims()\n");
 		return 0;
 	}
 }

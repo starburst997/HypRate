@@ -8,6 +8,8 @@
 		
 	<!-- iOS -->
         <ndll name="HypRate" if="ios" />
+		<ios linker-flags="-v -fobjc-arc" />
+		<dependency name="CFNetwork.framework" if="ios" />
         <dependency name="StoreKit.framework" if="ios" />
         <dependency name="SystemConfiguration.framework" if="ios" />
 
