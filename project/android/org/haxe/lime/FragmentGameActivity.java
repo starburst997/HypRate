@@ -43,6 +43,7 @@ import org.haxe.HXCPP;
 
 import android.support.v4.app.FragmentActivity;
 
+import android.util.Log;
 
 public class FragmentGameActivity extends FragmentActivity implements SensorEventListener {
 	
@@ -85,6 +86,8 @@ public class FragmentGameActivity extends FragmentActivity implements SensorEven
 	protected void onCreate (Bundle state) {
 		
 		super.onCreate (state);
+		
+		Log.v("TEST", "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! CREATE");
 		
 		activity = this;
 		mContext = this;
@@ -424,6 +427,8 @@ public class FragmentGameActivity extends FragmentActivity implements SensorEven
 			extension.onDestroy ();
 			
 		}
+		
+		Log.v("TEST", "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! DESTROY");
 		
 		// TODO: Wait for result?
 		mView.sendActivity (Lime.DESTROY);
