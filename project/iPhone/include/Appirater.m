@@ -256,18 +256,18 @@ static BOOL _alwaysUseMainBundle = NO;
 	static Appirater *appirater = nil;
 	if (appirater == nil)
 	{
-		appirater = [[Appirater alloc] init];
+		/*appirater = [[Appirater alloc] init];
 		appirater.delegate = _delegate;
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appWillResignActive) name:
-                UIApplicationWillResignActiveNotification object:nil];
+                UIApplicationWillResignActiveNotification object:nil];*/
 
-        /*static dispatch_once_t onceToken;
+        static dispatch_once_t onceToken;
         dispatch_once(&onceToken, ^{
             appirater = [[Appirater alloc] init];
 			appirater.delegate = _delegate;
             [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appWillResignActive) name:
                 UIApplicationWillResignActiveNotification object:nil];
-        });*/
+        });
 	}
 	
 	return appirater;
