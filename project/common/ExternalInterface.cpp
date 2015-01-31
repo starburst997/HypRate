@@ -18,6 +18,8 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #include <hxcpp.h>
 #include "HypRate.h"
 
+using namespace hyprate;
+
 extern "C"{
 
 	int HypRate_register_prims(){
