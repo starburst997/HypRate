@@ -83,7 +83,7 @@ class HypRate{
 		@JNI
 		#end
         #if ios
-        @CPP("hyprate", "HypRate_setDialog_message")
+        @CPP("hyprate", "HypRate_setDialog_msg")
         #end
 		static public function setDialog_message( s : String ) : Void {
 
