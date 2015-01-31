@@ -130,7 +130,7 @@ namespace hyprate{
         // Disable significant event criterion
 		[Appirater setSignificantEventsUntilPrompt:-1];
 		[Appirater setTimeBeforeReminding:unitD];
-		[Appirater setDebug:YES];
+		//[Appirater setDebug:YES];
 		
 		[Appirater userDidSignificantEvent:YES];
 	}
