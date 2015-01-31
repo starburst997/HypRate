@@ -12,6 +12,38 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #import <UIKit/UIKit.h>
 #include <HypRate.h>
 #include "include/Appirater.h"
+
+//interface
+
+	@interface HypRate : NSObject
+		+ (HypRate *)instance;
+	@end
+
+	@interface NMEAppDelegate : NSObject <UIApplicationDelegate>
+	@end
+
+
+//implementation
+
+	@implementation NMEAppDelegate (HypRate)
+		
+	@end
+
+	@implementation HypRate
+	
+		- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+		{
+			
+		}
+		
+		- (void)applicationWillEnterForeground:(UIApplication *)application
+		{
+			[Appirater appEnteredForeground:NO];
+		}
+	
+	@end
+
+//
 namespace hyprate{
 
     /**
@@ -22,6 +54,7 @@ namespace hyprate{
 	*/
 	void setAppId( const char *s ){
 		[Appirater setAppId:[[[NSString alloc] initWithUTF8String:s] autorelease]];
+		[Appirater appLaunched:NO];
 	}
 
 	/**
@@ -31,7 +64,7 @@ namespace hyprate{
 	* @return	void
 	*/
 	void setDialog_title( const char *s ){
-		[Appirater setTitle_text:[[[NSString alloc] initWithUTF8String:s] autorelease]];
+		[Appirater setCustomAlertTitle:[[[NSString alloc] initWithUTF8String:s] autorelease]];
 	}
 	
 	/**
@@ -51,7 +84,7 @@ namespace hyprate{
 	* @return	void
 	*/
 	void setDialog_msg( const char *s ){
-		[Appirater setMsg_text:[[[NSString alloc] initWithUTF8String:s] autorelease]];
+		[Appirater setCustomAlertMessage:[[[NSString alloc] initWithUTF8String:s] autorelease]];
 	}
 
 	/**
@@ -61,7 +94,7 @@ namespace hyprate{
 	* @return	void
 	*/
 	void setPositive_text( const char *s ){
-		[Appirater setRate_text:[[[NSString alloc] initWithUTF8String:s] autorelease]];
+		[Appirater setCustomAlertRateButtonTitle:[[[NSString alloc] initWithUTF8String:s] autorelease]];
 	}
 
 	/**
@@ -71,7 +104,7 @@ namespace hyprate{
 	* @return	void
 	*/
 	void setNeutral_text( const char *s ){
-		[Appirater setNeutral_text:[[[NSString alloc] initWithUTF8String:s] autorelease]];
+		[Appirater setCustomAlertRateLaterButtonTitle:[[[NSString alloc] initWithUTF8String:s] autorelease]];
 	}
 
 	/**
@@ -81,7 +114,7 @@ namespace hyprate{
 	* @return	void
 	*/
 	void setCancel_text( const char *s ){
-		[Appirater setCancel_text:[[[NSString alloc] initWithUTF8String:s] autorelease]];
+		[Appirater setCustomAlertCancelButtonTitle:[[[NSString alloc] initWithUTF8String:s] autorelease]];
 	}
     
 	/**
@@ -97,6 +130,7 @@ namespace hyprate{
 		[Appirater setSignificantEventsUntilPrompt:-1];
 		[Appirater setTimeBeforeReminding:unitD];
 		[Appirater setDebug:YES];
+		[Appirater incrementSignificantEventAndRate:YES];
 	}
 
 	/**
