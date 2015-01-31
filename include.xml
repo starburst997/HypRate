@@ -2,8 +2,7 @@
 <project>
 
 	<!-- misc -->
-		<classpath name="src" />
-
+		
 		<haxelib name="inthebox-macros" />
 		
 	<!-- iOS -->
