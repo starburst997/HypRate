@@ -31,10 +31,6 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 	@implementation NMEAppDelegate (HypRate)
 		
-	@end
-
-	@implementation HypRate
-	
 		-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
 			[Appirater appLaunched:NO];
 			return YES;
@@ -43,6 +39,12 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 		-(void)applicationWillEnterForeground:(UIApplication *)application{
 			[Appirater appEnteredForeground:NO];
 		}
+	
+	@end
+
+	@implementation HypRate
+	
+		
 	
 	@end
 
