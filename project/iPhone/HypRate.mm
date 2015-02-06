@@ -31,10 +31,10 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 	@implementation NMEAppDelegate (HypRate)
 		
-		-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
+		/*-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
 			[Appirater appLaunched:NO];
 			return YES;
-		}
+		}*/
 		
 		-(void)applicationWillEnterForeground:(UIApplication *)application{
 			[Appirater appEnteredForeground:NO];
@@ -59,6 +59,7 @@ namespace hyprate{
 	*/
 	void setAppId( const char *s ){
 		[Appirater setAppId:[[NSString alloc] initWithUTF8String:s]];
+		[Appirater appLaunched:NO];
 	}
 
 	/**
