@@ -2,14 +2,13 @@ package com.kopfgeldjaeger.ratememaybe;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentTransaction; 
 import android.text.format.DateUtils;
 import android.util.Log;
 import android.widget.Toast;
@@ -38,8 +37,6 @@ public class RateMeMaybe implements RMMFragInterface {
 	private Boolean mHandleCancelAsNeutral = true;
 
 	private Boolean mRunWithoutPlayStore = false;
-	
-	private String mStoreURI = "market://details?id=";
 
 	public interface OnRMMUserChoiceListener {
 		void handlePositive();
@@ -55,15 +52,10 @@ public class RateMeMaybe implements RMMFragInterface {
 		mActivity = activity;
 		mPreferences = mActivity.getSharedPreferences(PREF.NAME, 0);
 	}
-	
-	public void updateActivity(FragmentActivity activity) {
-		mActivity = activity;
-		mPreferences = mActivity.getSharedPreferences(PREF.NAME, 0);
-	}
 
 	/**
 	 * Sets the title of the dialog shown to the user
-	 * 
+	 *
 	 * @param dialogTitle
 	 */
 	public void setDialogTitle(String dialogTitle) {
@@ -81,7 +73,7 @@ public class RateMeMaybe implements RMMFragInterface {
 	/**
 	 * Sets the message shown to the user. %totalLaunchCount% will be replaced
 	 * with total launch count.
-	 * 
+	 *
 	 * @param dialogMessage
 	 *            The message shown
 	 */
@@ -111,7 +103,7 @@ public class RateMeMaybe implements RMMFragInterface {
 
 	/**
 	 * Sets name of button that opens Play Store entry
-	 * 
+	 *
 	 * @param positiveBtn
 	 */
 	public void setPositiveBtn(String positiveBtn) {
@@ -128,7 +120,7 @@ public class RateMeMaybe implements RMMFragInterface {
 
 	/**
 	 * Sets name of neutral button
-	 * 
+	 *
 	 * @param neutralBtn
 	 */
 	public void setNeutralBtn(String neutralBtn) {
@@ -145,7 +137,7 @@ public class RateMeMaybe implements RMMFragInterface {
 
 	/**
 	 * Sets name of button that makes the prompt never show again
-	 * 
+	 *
 	 * @param negativeBtn
 	 */
 	public void setNegativeBtn(String negativeBtn) {
@@ -166,7 +158,7 @@ public class RateMeMaybe implements RMMFragInterface {
 
 	/**
 	 * Sets requirements for when to prompt the user.
-	 * 
+	 *
 	 * @param minLaunchesUntilInitialPrompt
 	 *            Minimum of launches before the user is prompted for the first
 	 *            time. One call of .run() counts as launch.
@@ -201,7 +193,7 @@ public class RateMeMaybe implements RMMFragInterface {
 
 	/**
 	 * Sets an additional callback for when the user has made a choice.
-	 * 
+	 *
 	 * @param listener
 	 */
 	public void setAdditionalListener(OnRMMUserChoiceListener listener) {
@@ -211,7 +203,7 @@ public class RateMeMaybe implements RMMFragInterface {
 	/**
 	 * Standard is false. Whether the run method is executed even if no Play
 	 * Store is installed on device.
-	 * 
+	 *
 	 * @param runWithoutPlayStore
 	 */
 	public void setRunWithoutPlayStore(Boolean runWithoutPlayStore) {
@@ -238,9 +230,8 @@ public class RateMeMaybe implements RMMFragInterface {
 		RateMeMaybeFragment frag = new RateMeMaybeFragment();
 		frag.setData(getIcon(), getDialogTitle(), getDialogMessage(),
 				getPositiveBtn(), getNeutralBtn(), getNegativeBtn(), this);
-		
 		frag.show(mActivity.getSupportFragmentManager(), "rmmFragment");
-		
+
 	}
 
 	/**
@@ -340,7 +331,8 @@ public class RateMeMaybe implements RMMFragInterface {
 		try {
 			mActivity
 					.startActivity(new Intent(Intent.ACTION_VIEW, Uri
-							.parse(mStoreURI + mActivity.getPackageName())));
+							.parse("market://details?id="
+									+ mActivity.getPackageName())));
 		} catch (ActivityNotFoundException e) {
 			Toast.makeText(mActivity, "Could not launch Play Store!",
 					Toast.LENGTH_SHORT).show();
@@ -351,23 +343,7 @@ public class RateMeMaybe implements RMMFragInterface {
 		}
 
 	}
-	
-	/**
-	 * Store to open
-	 * 
-	 * @param store
-	 */
-	public void setStore(String mStore) {
-		
-		if (mStore == null || mStore.equals("play")) {
-			mStoreURI = "market://details?id=";
-		} else if (mStore.equals("amazon")) {
-			mStoreURI = "amzn://apps/android?p=";
-		} else if (mStore.equals("androidpit")) {
-			mStoreURI = "appcenter://package/";
-		}
-	}
-	
+
 	/**
 	 * @return the application name of the host activity
 	 */

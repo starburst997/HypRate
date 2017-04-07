@@ -2,20 +2,15 @@
 <project>
 
 	<!-- misc -->
-		
-		<haxelib name="inthebox-macros" />
-		
+		<classpath name="src" />
+
 	<!-- iOS -->
         <ndll name="HypRate" if="ios" />
-		<ios linker-flags="-v -fobjc-arc" />
-		<dependency name="CFNetwork.framework" if="ios" />
         <dependency name="StoreKit.framework" if="ios" />
         <dependency name="SystemConfiguration.framework" if="ios" />
 
 
 	<!-- Android -->
 		<java path="project/android" />
-		<templatePath name="templates" />
-		
-		<haxedef name="FAILSAFE_FRAGMENT"/>
+    <templatePath name="templates" />
 </project>

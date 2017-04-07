@@ -12,7 +12,7 @@ import org.haxe.lime.GameActivity;
 
 public class HypRate{
 
-	private static RateMeMaybe rmm = new RateMeMaybe( GameActivity.getInstance() );
+	private static RateMeMaybe rmm = new RateMeMaybe( GameActivity.getInstance( ) );
 	private static final String TAG = "trace";
 
 	// -------o constructor
@@ -41,10 +41,8 @@ public class HypRate{
 								int minLaunches_until_next ,
 								int minDays_until_next
 							){
-			//trace("start");
-			//RateMeMaybe.resetData( GameActivity.getInstance( ) );
-			
-			rmm.updateActivity( GameActivity.getInstance( ) );
+			trace("start");
+			RateMeMaybe.resetData( GameActivity.getInstance( ) );
 			rmm.setPromptMinimums( minLaunches , minInitial_days , minLaunches_until_next , minDays_until_next );
 			rmm.setRunWithoutPlayStore(true);
 			rmm.run();
@@ -68,17 +66,6 @@ public class HypRate{
 		*/
 		static public void setAppId( String appId ){
 			trace("setAppId does nothing on Android");
-		}
-		
-		/**
-		*
-		* play / amazon / androidpit
-		*
-		* @public
-		* @return	void
-		*/
-		static public void setStore( String store ){
-			rmm.setStore( store );
 		}
 
 		/**
